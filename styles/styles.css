@@ -1,0 +1,282 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: middle;
+  line-height: 1.6;
+}
+
+
+/* Universal Components */
+
+.row {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.heading {
+  font-size: 2em;
+  text-align: center;
+}
+
+.main{
+  transition: 0.5s;
+}
+
+.img{
+  max-width: 60%;
+  display: block;
+}
+
+.imgcontainer{
+  max-height: 50vh;
+  width: 100%;
+  overflow: auto;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/*
+    Index Page
+*/
+
+.indexone{
+  background-color: #ff7700;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23cc0000' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23aa0000' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%23d6002b' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23b10022' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%23d9004b' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23b2003d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23d3006c' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23ac0057' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23c4008c' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0071' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+  min-height: 100vh;
+  transition: 0.5s;
+  color: #ffffff;
+}
+
+.bottomimg{
+  width: 100%;
+}
+
+.indexone .container{
+  max-width: 960px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+.indexone > .container > .indexheading{
+  font-size: 2rem;
+  margin: 0 auto;
+  padding: 8rem 0rem 2rem 0;
+  text-align: center;
+}
+
+.indexone  .container  .button{
+  padding: 0.6rem;
+  border : 0.1rem solid #ffffff;
+  color: #ffffff;
+  background: transparent;
+  outline: none;
+  border-radius: 0.2rem;
+  margin: 0 auto;
+}
+
+.indexone  .container  .button:hover{
+  padding: 0.6rem;
+  border : 0.1rem solid #ffffff;
+  color: #000000;
+  background: #ffffff;
+  margin: 0 auto;
+}
+
+.header{
+  background: transparent;
+}
+
+.header a{
+  color: #ffffff;
+  text-decoration : none;
+}
+
+.header .headercontainer{
+  max-width: 960px;
+  margin: auto;
+  padding: 0;
+}
+
+.header .headercontainer .col{
+  padding: 1rem;
+}
+
+.header .headercontainer .rightcol{
+  text-align: right;
+}
+
+.header .headercontainer .col .title{
+  font-size: 1.3em;
+  font-weight: bolder;
+}
+
+/* The side navigation menu */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  text-align: center;
+  background-color: #343434;
+  overflow-x: hidden;
+  padding-top: 3rem;
+  transition: 0.5s;
+}
+
+.sidenav a {
+  padding: 1rem 2.2rem;
+  text-decoration: none;
+  font-size: 1.1em;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 1.3rem;
+  margin-left: 50px;
+}
+
+.sidenav .bar{
+  width: 80%;
+  height: 0.1rem;
+  background: #ffffff;
+}
+
+/* Application Page */
+
+.applicationmain .header{
+  background: #0249c6;
+  color: #fff;
+}
+
+.applypagecontainer{
+  background: #fff;  /* fallback for old browsers */
+}
+
+.applicationpage{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.applicationpage .proceed{
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.applicationpage .cancel{
+  width: 100%;
+}
+
+.applicationpage .furtherdetails{
+  padding: 1rem;
+  border: 0.1rem solid #efefef;
+  border-radius: 0.2rem;
+}
+
+.applicationpage .furtherdetails .submitdetails{
+  padding: 0.75rem;
+  width: 100%;
+  background: #15cd72;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0,.12), 0 1px 1px rgba(0,0,0,.24);
+  box-shadow: 0 0 1px rgba(0,0,0,.12), 0 1px 1px rgba(0,0,0,.24);
+}
+
+.procedure{
+  background: #f3f5f9;
+  color: rgba(3, 27, 78, 0.7);
+}
+
+.procedure h3{
+  color: #243965;
+}
+
+.procedure .row{
+  max-width: 960px;
+  padding: 2.5rem 1rem;
+  margin: 0 auto;
+}
+
+.procedure .processicon{
+  color : #183055;
+}
+
+/* Installation Page */
+
+.installpage{
+  background: #ff512f;
+  background: -webkit-linear-gradient(to right, #ff512f, #f09819);
+  background: linear-gradient(to right, #ff512f, #f09819);
+  padding: 1rem;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.installpage .heading{
+  color: #ffffff;
+  padding: 1rem;
+}
+
+#installform{
+  padding: 1.75rem;
+  background: #ffffff;
+  border-radius : 0.5rem;
+  max-width: 80%;
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px){
+  .procedure .row{
+    padding: 0 1rem;
+  }
+
+  .procedure .row .col-md-4{
+    margin-top : 1rem;
+    padding: 1rem;
+    background : #ffffff;
+    border : 0.1rem solid #cfcfcf;
+    border-radius: 0.4rem;
+  }
+}
+
+@media only screen and (max-width: 500px){
+  #installform {
+    max-width: 90%;
+  }
+}
