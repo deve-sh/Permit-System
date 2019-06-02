@@ -18,7 +18,21 @@ require_once('./inc/config.php');
 		<?php include './inc/styles.html'; ?>
 </head>
 <body>
-	<div id="root" class="container-fluid finalizeapplpage">
+	<div id="root" class="container-fluid finalizeapplpage" align="center">
+		<h2>
+			<?php
+				if(isset($config['appname']))
+					echo $config['appname'];
+				else
+					echo "Permit System";
+			?>
+		</h2>
+		<?php
+			// -----------------------------------
+			// Add your Payment Integration here.
+			// -----------------------------------
+		?>
+
 		<?php
 			// Variables
 
@@ -97,14 +111,13 @@ require_once('./inc/config.php');
 
 										// Printing a table as receipt.
 
-										echo "<br>Application Initiated.<br>";
-
 										?>
-										<div id="tablecontainer">
+										<br/>
+										<div class="tablecontainer" align="center">
 											<table id='applicationtable'>
 												<tr>
-													<th>Fields</th>
-													<th>Details</th>
+													<th class="headingfields">Fields</th>
+													<th class="headingfields">Details</th>
 												</tr>
 												<tr>
 													<th>Permit Number</th>
@@ -151,14 +164,15 @@ require_once('./inc/config.php');
 										// A Button to print
 
 										?>
-											<button onclick="window.print()" class="printbutton btn">Print</button>
-											<br/>
-
-											<a href="./">
-												<button class="btn btn-primary">
-													Home
-												</button>
-											</a>
+										<br/>
+										<button onclick="window.print()" class="printbutton btn btn-info">Print</button>
+										<br/>
+										<br/>
+										<a href="./">
+											<button class="btn btn-primary">
+												Home
+											</button>
+										</a>
 										<?php
 
 									}

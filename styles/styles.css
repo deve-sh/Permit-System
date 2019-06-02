@@ -8,8 +8,9 @@
   line-height: 1.6;
 }
 
-
 /* Universal Components */
+
+@page{size:auto; margin:5mm;}
 
 .row {
   padding: 0;
@@ -40,6 +41,10 @@
 .imgcontainer{
   max-height: 50vh;
   width: 100%;
+  overflow: auto;
+}
+
+.tablecontainer{
   overflow: auto;
 }
 
@@ -233,6 +238,24 @@ input[type=number]::-webkit-outer-spin-button {
   color : #183055;
 }
 
+/* Application Finalizing Page */
+
+.finalizeapplpage{
+  padding: 1rem;
+  text-align: center;
+}
+
+#applicationtable tr,th,td{
+  padding: 1rem;
+  border: 0.1rem solid #000000;
+}
+
+#applicationtable .headingfields{
+  background: #343434;
+  color: #fff;
+  text-align : center;
+}
+
 /* Installation Page */
 
 .installpage{
@@ -278,5 +301,21 @@ input[type=number]::-webkit-outer-spin-button {
 @media only screen and (max-width: 500px){
   #installform {
     max-width: 90%;
+  }
+}
+
+@media print{
+  .btn{
+    display: none;
+  }
+
+  #applicationtable .headingfields{
+    -webkit-print-color-adjust:exact;
+  }
+
+  .finalizeapplpage{
+    border: 0.1rem solid #000000;
+    min-height: 100vh;
+    border-radius: 0.4rem;
   }
 }
