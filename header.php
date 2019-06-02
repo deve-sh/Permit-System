@@ -4,6 +4,7 @@
 <div id="sidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="./apply.php">Apply</a>
+  <a href="./about.php">About</a>
   <a href="./viewstatus.php">View Status</a>
   <a href="./admin">Admin</a>
   <a href="./contact.php">Contact</a>
@@ -18,7 +19,7 @@
 
 <div class="header">
 	<div class="row headercontainer">
-		<div class="col col-sm-6">
+		<div class="column col-10">
 			<a href='./'>
 				<span class='title'>
 					<?php
@@ -31,7 +32,7 @@
 			</a>
 		</div>
 
-		<div class="col col-sm-6 rightcol">
+		<div class="column col-2 rightcol">
 			<span onclick="openNav()"><i class="fas fa-bars fa-lg" style="cursor: pointer;"></i></span>
 		</div>
 	</div>

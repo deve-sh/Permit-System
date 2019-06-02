@@ -104,6 +104,8 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0 auto;
 }
 
+/* Header */
+
 .header{
   background: transparent;
 }
@@ -119,7 +121,7 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 0;
 }
 
-.header .headercontainer .col{
+.header .headercontainer .column{
   padding: 1rem;
 }
 
@@ -127,7 +129,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: right;
 }
 
-.header .headercontainer .col .title{
+.header .headercontainer .column .title{
   font-size: 1.3em;
   font-weight: bolder;
 }
@@ -142,7 +144,7 @@ input[type=number]::-webkit-outer-spin-button {
   top: 0;
   right: 0;
   text-align: center;
-  background-color: #343434;
+  background-color: #212121;
   overflow-x: hidden;
   padding-top: 3rem;
   transition: 0.5s;
@@ -178,12 +180,13 @@ input[type=number]::-webkit-outer-spin-button {
 /* Application Page */
 
 .applicationmain .header{
-  background: #0249c6;
+  background: #212b34;
   color: #fff;
 }
 
 .applypagecontainer{
-  background: #fff;  /* fallback for old browsers */
+  background: #273442;
+  color: #ffffff;
 }
 
 .applicationpage{
@@ -203,8 +206,12 @@ input[type=number]::-webkit-outer-spin-button {
 
 .applicationpage .furtherdetails{
   padding: 1rem;
-  border: 0.1rem solid #efefef;
-  border-radius: 0.2rem;
+  border: 0.1rem solid #1b2128;
+  background: #fff;
+  color: #212121;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0,.12), 0 1px 1px rgba(0,0,0,.24);
+  box-shadow: 0 0 1px rgba(0,0,0,.12), 0 1px 1px rgba(0,0,0,.24);
 }
 
 .applicationpage .furtherdetails .submitdetails{
@@ -254,6 +261,25 @@ input[type=number]::-webkit-outer-spin-button {
   background: #343434;
   color: #fff;
   text-align : center;
+}
+
+/* About Page */
+
+.aboutpage .header{
+  background: #191919;
+  color: #fff;
+}
+
+.aboutpage .about{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* View Status Page */
+
+.viewstatuspage{
+  
 }
 
 /* Installation Page */

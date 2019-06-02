@@ -18,27 +18,10 @@ require_once('./inc/config.php');
 	?>
 </head>
 <body>
-	<div id="root" class="container-fluid">
-		
-		<?php
-			if($_POST['permitid'] && $_POST['permitdate']){
-				$permitid = $db->escape($_POST['permitid']);
-				$pdate = $_POST['permitdate'];
-
-				$query = "SELECT * FROM ".$config['tableprefix']."permits WHERE permitid = '".$permitid."' AND pdate = '".$pdate."'";
-
-				if($db->numrows($db->query($query))==0){
-					echo "<br>Nothing found.<br>";
-				}
-				else{
-					$details = $db->fetch($db->query($query));
-
-					// Printing details.
-
-					
-				}
-			}
-		?>
+	<div id="root" class="container-fluid viewstatuspage">
+		<div class="main">
+			<?php include './header.php'; ?>
+		</div>
 	</div>
 
 	
