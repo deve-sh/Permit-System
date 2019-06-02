@@ -54,6 +54,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0; 
 }
 
+.proceed{
+  width: 100%;
+}
+
 /*
     Index Page
 */
@@ -278,8 +282,28 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* View Status Page */
 
-.viewstatuspage{
-  
+.viewstatuspage .header{
+  background: #155592;
+  color: #fff;
+}
+
+.viewstatuspage .viewcontainer{
+  background: #1971c2;
+  color: #fff;
+}
+
+.viewstatuspage .viewcontainer .view{
+  max-width: 960px;
+  background: transparent;
+  color: #fff;
+  padding: 4rem 1rem;
+  margin: 0 auto;
+}
+
+.viewstatuspage .statusviewer{
+  padding: 1.3rem 1rem;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 /* Installation Page */
