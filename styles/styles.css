@@ -58,6 +58,10 @@ input[type=number]::-webkit-outer-spin-button {
   width: 100%;
 }
 
+.printheading{
+  display: none;
+}
+
 /*
     Index Page
 */
@@ -200,7 +204,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .applicationpage .proceed{
-  width: 100%;
   margin-bottom: 0.5rem;
 }
 
@@ -306,6 +309,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0 auto;
 }
 
+.viewstatuspage .proceed{
+  background: #15cd72;
+}
+
 /* Installation Page */
 
 .installpage{
@@ -363,9 +370,25 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-print-color-adjust:exact;
   }
 
+  .viewstatuspage .header{
+    color: #000;
+  }
+
+  .viewstatuspage .header .rightcol{
+    display: none;
+  }
+
+  .viewcontainer{
+    display: none;
+  }
+
   .finalizeapplpage{
     border: 0.1rem solid #000000;
     min-height: 100vh;
     border-radius: 0.4rem;
+  }
+
+  .printheading{
+    display: block;
   }
 }
