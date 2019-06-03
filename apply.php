@@ -22,7 +22,7 @@
 			<?php include './header.php' ?>
 			<div class="applypagecontainer">
 				<div class="applicationpage">
-					<h3>Apply For Permit</h3>
+					<h2>Apply For Permit</h2>
 					<br/>
 					<form class="applicationform" action="" method="POST">
 						Check Date :<br/><br/>

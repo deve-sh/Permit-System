@@ -113,6 +113,7 @@ require_once('./inc/config.php');
 								</table>
 							</div>
 							<br/>
+							<p align='center'>Kindly Carry your Identity Proofs and Vehicle Papers if your Application is Approved.</p>
 							<div align="center">
 								<button onclick="window.print()" class="printbutton btn btn-info">Print</button>
 								<br/>
