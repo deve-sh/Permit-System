@@ -370,6 +370,18 @@ input[type=number]::-webkit-outer-spin-button {
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
+/* Administrator Route Stiles */
+
+.adminloginpage .header{
+  background: #212121;
+  color: #ffffff;
+}
+
+.adminloginpage .formcontainer{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
 /* Media Queries */
 
