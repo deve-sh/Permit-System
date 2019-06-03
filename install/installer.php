@@ -132,27 +132,39 @@
 					// Writing the files for verification of installation.
 
 					$configstring = "<?php\n";
+					$adminconfigstring = "<?php\n";
 
 					foreach ($config as $key => $value) {
-						if(!strstr($key, "admin"))	// Not inserting Admin Details by mistake.
+						if(!strstr($key, "admin")){	
+							// Not inserting Admin Details by mistake.
 							$configstring .= "\t\$config['{$key}'] = '{$value}';\n";
+							$adminconfigstring .= "\t\$config['{$key}'] = '{$value}';\n";
+						}
 					}
 
 					$configstring .= "\tinclude('./inc/connect.php');\n\t\$db = new dbdriver();";
+					$adminconfigstring .= "\tinclude('../inc/connect.php');\n\t\$db = new dbdriver();";
 
 					$configstring .= "\n\t\$db->connect(\$config['dbhost'],\$config['dbuser'],\$config['dbpass'],\$config['dbname']);\n?>";
+
+					$adminconfigstring .= "\n\t\$db->connect(\$config['dbhost'],\$config['dbuser'],\$config['dbpass'],\$config['dbname']);\n?>";
+
+
 
 					// Opening and writing to files.
 
 					$filename1 = "../inc/config.php";
 					$filename2 = "../inc/lock";
+					$filename3 = "../admin/config.php";
 
 					$file1 = "";
 					$file2 = "";
+					$file3 = "";
 
 					try {
 						$file1 = fopen($filename1, "w");
 						$file2 = fopen($filename2, "w");	
+						$file3 = fopen($filename3, "w");
 					} catch (Exception $e) {
 						echo $e;
 						exit();
@@ -164,7 +176,7 @@
 						echo "<br><br>Writing Configuration and Confirmation Files.";
 
 						fwrite($file1, $configstring);
-
+						fwrite($file3, $adminconfigstring);
 						fwrite($file2, "1");
 					}
 					catch(Exception $e){
