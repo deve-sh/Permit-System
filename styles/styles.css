@@ -282,6 +282,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .aboutpage .header{
   background: #191919;
+  border-top : 0.2rem solid #20b78a;
   color: #fff;
 }
 
@@ -381,6 +382,55 @@ input[type=number]::-webkit-outer-spin-button {
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem;
+}
+
+.adminmainpage .header{
+  background: #232b2d;
+  border-top : 0.3rem solid #20b78a;
+  color: #ffffff;
+}
+
+.adminmainpage .admindetails{
+  background: #232b2d;
+  color: #ffffff;
+}
+
+.adminmainpage .admindetails .datacontainer, .adminmainpage .adminstats .statscontainer{
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.adminmainpage .tile{
+  background: #ffffff;
+  color: #212121;
+  margin-top: 1rem;
+  border-radius: 0.2rem;
+  padding: 2rem;
+}
+
+.adminmainpage a{
+  text-decoration: none;
+}
+
+.statscontainer .unapproved,.statscontainer .totalapplications,.statscontainer .furtherdates{
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  color: #ffffff;
+  border-radius: 0.25rem;
+}
+
+.statscontainer .unapproved{
+  background: #dc3545;
+}
+
+.statscontainer .furtherdates{
+  background: #20b78a;
+}
+
+.statscontainer .totalapplications{
+  background: #28a745;
 }
 
 /* Media Queries */
