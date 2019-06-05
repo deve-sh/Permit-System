@@ -36,9 +36,9 @@
 				<br/>
 				<input type="password" required name="password" class="form-control"/>
 				<br/>
-				<button class="btn proceed btn-success" type="submit">Login</button>
+				<button class="btn proceed btn-primary" type="submit">Login</button>
 				<br/><br/>
-				<a href="./"><button class="btn proceed btn-danger">Cancel</button></a>
+				<a href="./"><div class="btn proceed btn-danger">Back to Admin CP</div></a>
 			</form>
 		</div>
 	</div>

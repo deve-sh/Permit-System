@@ -116,7 +116,7 @@
 							</div>
 						</div>";
 
-						$today = date("y-m-d");
+						$today = date("Y-m-d");
 
 						$statquery2 = "SELECT * FROM ".$config['tableprefix']."pdates WHERE pdate >= '".$today."'";
 
