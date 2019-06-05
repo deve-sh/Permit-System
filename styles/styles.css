@@ -375,6 +375,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .adminloginpage .header{
   background: #212121;
+  border-top : 0.2rem solid #20b78a;
   color: #ffffff;
 }
 
