@@ -69,6 +69,13 @@
 							</a>
 						</div>
 						<div class="col-sm-3" align="center">
+							<a href="./alldates.php">
+								<div class="tile">
+									All Openings
+								</div>
+							</a>
+						</div>
+						<div class="col-sm-3" align="center">
 							<a href='./verifyappl.php'>
 								<div class="tile">
 									Verify A Permit
@@ -82,10 +89,19 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-sm-3" align="center">
+					</div>
+					<div class="row">
+						<div class="col-sm-6" align="center">
 							<a href="./adddate.php">
 								<div class="tile">
 									Add an Opening
+								</div>
+							</a>
+						</div>
+						<div class="col-sm-6" align="center">
+							<a href="../viewstatus.php">
+								<div class="tile">
+									View Status
 								</div>
 							</a>
 						</div>
