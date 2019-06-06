@@ -39,7 +39,7 @@
 					echo "<br><div class='alert alert-danger'>
 							The application has not been approved yet.
 						</div><br>";
-					header("refresh:2;url=./verifypermit.php");
+					header("refresh:2;url=./verifyappl.php");
 					exit();
 				}
 
@@ -47,7 +47,7 @@
 					echo "<br><div class='alert alert-danger'>
 							The application has already been marked visited.
 						</div><br>";
-					header("refresh:2;url=./verifypermit.php");
+					header("refresh:2;url=./verifyappl.php");
 					exit();
 				}
 
@@ -57,12 +57,12 @@
 
 				if($db->query($query1)){
 					echo "<br><div class='alert alert-success'>Application marked successfully.</div><br>";
-					header("refresh:2;url=./verifypermit.php");
+					header("refresh:2;url=./verifyappl.php");
 					exit();
 				}
 				else{
 					echo "<br><div class='alert alert-info'>Application could not be marked visited. Kindly try again later.</div><br>";
-					header("refresh:2;url=./verifypermit.php");
+					header("refresh:2;url=./verifyappl.php");
 					exit();
 				}
 			}
