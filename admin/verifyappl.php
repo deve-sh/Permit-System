@@ -100,7 +100,7 @@
 									</tr>
 									<tr>
 										<th>Visited</th>
-										<td><?php echo ($details['approved'] == 0)?"Not Visited":"Visited"; ?></td>
+										<td><?php echo ($details['visited'] == 0)?"Not Visited":"Visited"; ?></td>
 									</tr>
 									<tr>
 										<th>Application Time</th>
@@ -109,6 +109,7 @@
 										?></td>
 									</tr>
 								</table>
+							</div>
 					<?php
 							if($details['approved'] == 0){
 								// If application is not approved.

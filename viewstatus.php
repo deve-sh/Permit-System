@@ -105,6 +105,10 @@ require_once('./inc/config.php');
 										<td><?php echo ($details['approved'] == 0)?"Not Approved":"Approved"; ?></td>
 									</tr>
 									<tr>
+										<th>Visited</th>
+										<td><?php echo ($details['visited'] == 0)?"Not Visited":"Visited"; ?></td>
+									</tr>
+									<tr>
 										<th>Application Time</th>
 										<td><?php
 											echo $details['appl_time']

@@ -7,7 +7,7 @@ session_start();
 		<div class="column col-8">
 				<span class='title'>
 					<?php
-						echo "Admin Panel";
+						echo "<a href='./'>Admin Panel</a>";
 					?>
 				</span>
 		</div>

@@ -31,8 +31,6 @@
 				<br/>
 				<input type="number" class="form-control"  min="1" name="npermits" required/>
 				<br/>
-				Note that this is permanent. Dates once opened cannot be removed.
-				<br/><br/>
 				<button type="submit" class="btn proceed btn-primary">Add Opening</button>
 				<br/><br/>
 				<a href="./"><div class="btn proceed btn-danger">Back to Admin CP</div></a>
