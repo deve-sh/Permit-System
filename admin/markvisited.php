@@ -53,7 +53,7 @@
 
 				// Setting the application to visited.
 
-				$query1 = "UPDATE ".$config['tableprefix']."permits SET approved = 1 WHERE permitid = '".$details['permitid']."'";
+				$query1 = "UPDATE ".$config['tableprefix']."permits SET visited = 1 WHERE permitid = '".$details['permitid']."'";
 
 				if($db->query($query1)){
 					echo "<br><div class='alert alert-success'>Application marked successfully.</div><br>";
