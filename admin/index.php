@@ -61,47 +61,59 @@
 				?>
 				<br/><br/>
 					<div class="row">
-						<div class="col-sm-3" align="center">
+						<div class="col-md-3" align="center">
 							<a href="./allapplications.php">
 								<div class="tile">
 									All Permits
 								</div>
 							</a>
 						</div>
-						<div class="col-sm-3" align="center">
+						<div class="col-md-3" align="center">
 							<a href="./alldates.php">
 								<div class="tile">
 									All Openings
 								</div>
 							</a>
 						</div>
-						<div class="col-sm-3" align="center">
+						<div class="col-md-3" align="center">
 							<a href='./verifyappl.php'>
 								<div class="tile">
 									Verify A Permit
 								</div>
 							</a>
 						</div>
-						<div class="col-sm-3" align="center">
+						<div class="col-md-3" align="center">
 							<a href="./addadmin.php">
 								<div class="tile">
 									Add an Admin
 								</div>
 							</a>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-6" align="center">
+						<div class="col-md-3" align="center">
 							<a href="./adddate.php">
 								<div class="tile">
 									Add an Opening
 								</div>
 							</a>
 						</div>
-						<div class="col-sm-6" align="center">
+						<div class="col-md-3" align="center">
 							<a href="../viewstatus.php">
 								<div class="tile">
 									View Status
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3" align="center">
+							<a href="./updatepass.php">
+								<div class="tile">
+									Update Password
+								</div>
+							</a>
+						</div>
+						<div class="col-md-3" align="center">
+							<a href="./updateemail.php">
+								<div class="tile">
+									Update Email
 								</div>
 							</a>
 						</div>
@@ -122,7 +134,7 @@
 						$numunapproved = $db->numrows($db->query($statquery1));
 
 						echo "
-						<div class='col-sm-4'>
+						<div class='col-md-4'>
 							<div class='unapproved'>
 								<span class='heading'>
 									{$numunapproved}
@@ -139,7 +151,7 @@
 						$numdates = $db->numrows($db->query($statquery2));
 
 						echo "
-						<div class='col-sm-4'>
+						<div class='col-md-4'>
 							<div class='furtherdates'>
 								<span class='heading'>
 									{$numdates}
@@ -154,7 +166,7 @@
 						$numtotalapps = $db->numrows($db->query($statquery3));
 
 						echo "
-						<div class='col-sm-4'>
+						<div class='col-md-4'>
 							<div class='totalapplications'>
 								<span class='heading'>
 									{$numtotalapps}
