@@ -59,7 +59,7 @@ function requestMaker(event, date = ''){
 
 						for(let application in json.applications){
 							html += 
-							`<div class='application'>
+							`<div class='application' permitid='${json.applications[application]['permit_id']}'>
 								<div class='row'>
 									<div class='col-sm-4'>
 										<strong>${json.applications[application]['vehicle_no']}</strong>
@@ -128,7 +128,7 @@ function requestMaker(event, date = ''){
 
 						for(let application in json.applications){
 							html += 
-							`<div class='application'>
+							`<div class='application' permitid='${json.applications[application]['permit_id']}'>
 								<div class='row'>
 									<div class='col-sm-4'>
 										<strong>${json.applications[application]['vehicle_no']}</strong>
