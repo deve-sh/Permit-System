@@ -129,7 +129,9 @@
 					<?php
 						// Running more queries to populate the stats.
 
-						$statquery1 = "SELECT * FROM ".$config['tableprefix']."permits WHERE approved = 0";
+						$today = date("Y-m-d");
+
+						$statquery1 = "SELECT * FROM ".$config['tableprefix']."permits WHERE approved = 0 AND pdate >= '".$today."'";
 
 						$numunapproved = $db->numrows($db->query($statquery1));
 
@@ -143,8 +145,6 @@
 								Unapproved Permits
 							</div>
 						</div>";
-
-						$today = date("Y-m-d");
 
 						$statquery2 = "SELECT * FROM ".$config['tableprefix']."pdates WHERE pdate >= '".$today."'";
 

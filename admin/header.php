@@ -18,7 +18,7 @@ session_start();
 				if($_SESSION['permitisadmin'] == true && $_SESSION['permituserid']){
 					?>
 						&nbsp;&nbsp;&nbsp;
-						<a href="./logout.php"><i class="fas fa-door-open fa-lg"></i></a>
+						<a href="./logout.php" title='Log Out'><i class="fas fa-door-open fa-lg"></i></a>
 					<?php
 				}
 			?>

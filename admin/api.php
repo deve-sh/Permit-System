@@ -1,5 +1,5 @@
 <?php
-	// PHP File for API Usage with React or front end components.
+	// PHP File for API Usage with Front End JS.
 
 	require_once('./adminchecker.php');
 	require_once('./config.php');
@@ -25,7 +25,7 @@
 				$queryob = $db->query($querystring);
 			}
 			catch(Exception $e){
-				echo "{\"status\":500}";	// Some internal server error.
+				echo "{\"status\":501}";	// Some internal server error.
 				exit();
 			}
 

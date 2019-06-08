@@ -31,6 +31,8 @@
 				<br/>
 				<input type="number" class="form-control"  min="1" name="npermits" required/>
 				<br/>
+				Be careful, the date once registered cannot be modified later.
+				<br/>
 				<button type="submit" class="btn proceed btn-primary">Add Opening</button>
 				<br/><br/>
 				<a href="./"><div class="btn proceed btn-danger">Back to Admin CP</div></a>
