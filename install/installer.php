@@ -131,8 +131,8 @@
 
 					// Writing the files for verification of installation.
 
-					$configstring = "<?php\n";
-					$adminconfigstring = "<?php\n";
+					$configstring = "<?php\nerror_reporting(0);\n";
+					$adminconfigstring = "<?php\nerror_reporting(0);\n";
 
 					foreach ($config as $key => $value) {
 						if(!strstr($key, "admin")){	
