@@ -28,6 +28,5 @@
 	</div>
 
 	<script type="text/javascript" src="../js/adminOpenings.js"></script>
-	<script type="text/javascript" src="../js/adminActionMaker.js"></script>
 </body>
 </html>

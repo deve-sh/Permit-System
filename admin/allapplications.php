@@ -38,6 +38,5 @@
 
 	<!-- Scripts to add interactivity -->
 	<script type="text/javascript" src="../js/adminRequestMaker.js"></script>
-	<script type="text/javascript" src="../js/adminActionMaker.js"></script>
 </body>
 </html>
