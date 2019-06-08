@@ -64,7 +64,7 @@
 						<div class="col-md-3" align="center">
 							<a href="./allapplications.php">
 								<div class="tile">
-									All Permits
+									All Applications
 								</div>
 							</a>
 						</div>

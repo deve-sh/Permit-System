@@ -4,14 +4,14 @@ session_start();
 ?>
 <div class="header">
 	<div class="headercontainer row">
-		<div class="column col-8">
+		<div class="column col-7">
 				<span class='title'>
 					<?php
 						echo "<a href='./'>Admin Panel</a>";
 					?>
 				</span>
 		</div>
-		<div class="column col-4 rightcol">
+		<div class="column col-5 rightcol">
 			<a href="../">Home</a>
 
 			<?php
