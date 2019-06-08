@@ -55,11 +55,11 @@ function requestMaker(event, date = ''){
 					else{
 						// Print the details to the webpage application by application.
 
-						let html = '<br/>';
+						let html = '';
 
 						for(let application in json.applications){
 							html += 
-							`<div class='application' permitid='${json.applications[application]['permit_id']}'>
+							`<br/><div class='application' permitid='${json.applications[application]['permit_id']}'>
 								<div class='row'>
 									<div class='col-sm-4'>
 										<strong>${json.applications[application]['vehicle_no']}</strong>
@@ -79,15 +79,15 @@ function requestMaker(event, date = ''){
 							if(json.applications[application]['approved'] === 0){
 								// Not Approved yet.
 
-								html += `<a target='Approve Application' onclick='window.location.reload()' href='./approveappl.php?pno=${json.applications[application]['permit_id']}' target ='_blank'><span class='btn btn-success'>Approve</span></a>`;
+								html += `<a title='Approve Application' onclick='window.location.reload()' href='./approveappl.php?pno=${json.applications[application]['permit_id']}' target ='_blank'><span class='btn btn-success'>Approve</span></a>`;
 							}
 							else{
 								if(json.applications[application]['visited'] === 0){
-									html += `<a onclick='window.location.reload()' href='./markvisited.php?pno=${json.applications[application]['permit_id']}' target = '_blank'><span class='btn btn-info'>Mark Visited</span></a>`;
+									html += `<a onclick='window.location.reload()' title='Mark Visited' href='./markvisited.php?pno=${json.applications[application]['permit_id']}' target = '_blank'><span class='btn btn-info'>Mark Visited</span></a>`;
 								}
 							}
 
-							html += `&nbsp;&nbsp;<a onclick='confirmdeletion(event)'><span class='btn btn-danger'><i class="fas fa-trash"></i></span></a>`;
+							html += `&nbsp;&nbsp;<a title = 'Delete Application' href='./deleteapplication.php?pno=${json.applications[application]['permit_id']}' target='_blank'><span class='btn btn-danger'><i class="fas fa-trash"></i></span></a>`;
 
 							html +=	`
 									</div>
@@ -128,7 +128,7 @@ function requestMaker(event, date = ''){
 
 						for(let application in json.applications){
 							html += 
-							`<div class='application' permitid='${json.applications[application]['permit_id']}'>
+							`<br/><div class='application' permitid='${json.applications[application]['permit_id']}'>
 								<div class='row'>
 									<div class='col-sm-4'>
 										<strong>${json.applications[application]['vehicle_no']}</strong>
