@@ -93,17 +93,52 @@ As the above structure specifies.
 
 To Contribute to the project, just change any aspect of the project you deem necessary and open a pull request to the Repo.
 
+**Note** : Before proceeding to changing the source code of the project, make sure you have enough knowledge of PHP and PHP's integration with HTML, or else you could mess a lot of things up.
+
 Its useful to take a look at the Notes below before proceeding to development : 
 
 #### Turning Error Reporting Off
 
-Error Reporting is turned off by default. To enable it go to **inc/config.php** and **admin/config.php** and remove the following line.
+Error Reporting is turned off by default. To enable it go to `inc/config.php` and `admin/config.php` and remove the following line.
 
 ```php
 error_reporting(0);
 ```
 
-More notes will be added in the future.
+#### Integrating a payments processor
+
+If you want your applicants to make a payment. Include the PHP payment scripts (Example : PayU Money, UPI) to the `finalizeappl.php` file.
+
+```php
+// -----------------------------------
+// Add your Payment Integration here.
+// -----------------------------------
+
+// Variables
+
+$date = $db->escape($_POST['entereddate']);
+$vehiclenumber = $db->escape($_POST['vehiclenumber']);
+$applicant_name = $db->escape($_POST['applicantname']);
+$applicant_email = $db->escape($_POST['applicantemail']);
+$applicant_phone = $db->escape($_POST['applicantphone']);
+
+```
+
+You could even create a seperate payments processing page, and redirect the application form to that page. Have a look at the `apply.php` page : 
+
+```html
+<form action="finalizeappl.php" class="furtherdetails" method="POST">
+```
+
+Change the above to :
+
+```html
+<form action="<Your Payments Processing Page>" class='furtherdetails' methor="POST">
+```
+
+And process the data from the form and the payments accordingly.
+
+* More notes will be added in the future.
 
 ## Open Source Licenses Used
 
