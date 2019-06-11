@@ -139,6 +139,7 @@ Change the above to :
 And process the data from the form and the payments accordingly.
 
 * More notes will be added in the future.
+* I am currently working on the pagination in case of large number of applications. So until then, if you have an idea for it. Do let me know. 😁
 
 ## Open Source Licenses Used
 
