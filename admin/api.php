@@ -20,7 +20,9 @@
 	$next = false;		// Variable to return in case there are further logs.
 
 	$totallogs = "";
-	$rowsperpage = 10;
+
+	$rowsperpage = 10;	// Edit this line if you need to change the number of applications that should appear on every page. The rendering of these applications is handled completely in the frontend using JavaScript.
+
 	$number = 0;
 
 	$today = date("Y-m-d");
