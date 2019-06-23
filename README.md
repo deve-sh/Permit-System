@@ -139,7 +139,14 @@ Change the above to :
 And process the data from the form and the payments accordingly.
 
 * More notes will be added in the future.
-* I am currently working on the pagination in case of large number of applications. So until then, if you have an idea for it. Do let me know. 😁
+
+#### Update on the pagination.
+
+The updated repo now has code for pagination of all applications page in the admin dashboard. The pagination frontend is in the file `js/adminRequestMaker.js` and the backend API is present in `admin/api.php`. In order to change the number of logs/applications that appear at once, just change this line from `admin/api.php` : 
+
+```php
+$rowsperpage = 10;	// Change the number 10 to the number of logs you want per page.
+```
 
 ## Open Source Licenses Used
 
