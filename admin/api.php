@@ -1,93 +1,90 @@
 <?php
 	// PHP File for API Usage with Front End JS.
+	// Now with support for pagination.
 
 	require_once('./adminchecker.php');
 	require_once('./config.php');
 
 	if(!$_SESSION['permitisadmin'] || !$_SESSION['permituserid']){
-		echo "[{
-			\"status\":401
-		}]";	// Unauthorised
+		echo "{\"status\":401, \"error\" : \"Internal Server Error.\"}";	// Unauthorised
 
 		exit();
 	}
 
-	function JSONPrinter($querystring){
-		// A function to retreive/fetch data from a query string and then print it in JSON Format. Since, there are two cases in which the process has to be repeated. Hence, using a function to reduce the amount of repetition of code.
-
-		global $db;		// Functions operate on a local scope, hence reminding the function that the var $db is a global database driver.
-
-		if($querystring){
-
-			$queried = "";
-
-			try{
-				$queryob = $db->query($querystring);
-			}
-			catch(Exception $e){
-				echo "{\"status\":501}";	// Some internal server error.
-				exit();
-			}
-
-			if($db->numrows($queryob) <= 0){
-				echo "{\"status\":200,\"numrows\":0}";
-			}
-			else{
-				$numrows = $db->numrows($queryob);
-				$number = 0;	// Variable to keep track of current application.
-
-				// Printing JSON.
-
-				echo "{\"status\":200,\"numrows\":".$numrows.",\"applications\":[";
-				
-				while($application = $db->fetch($queryob)){
-					// Printing all fields per application.
-					echo '{
-						"permit_id":'.$application['permitid'].',
-						"applicant_name":"'.$application['applicant_name'].'",
-						"vehicle_no":"'.$application['vehicle_no'].'",
-						"applicant_email":"'.$application['applicant_email'].'",
-						"applicant_phone":"'.$application['applicant_phone'].'",
-						"approved":'.$application['approved'].',
-						"pdate":"'.$application['pdate'].'",
-						"appl_time":"'.$application['appl_time'].'",
-						"visited":'.$application['visited'].'
-					}';
-
-					if($number < $numrows - 1 && $numrows != 1){
-						// Add a comma in case there are more applications.
-						// And the number of applications is not one, in that case, there is no need for a comma.
-						echo ",";
-					}
-
-					$number++;
-				}
-				echo "]}";
-			}
-		}
-		else{
-			echo '{"status":404}';	// Nothing found if nothing passed.
-		}
-	}
-
 	$date = $db->escape($_GET['date']);
 
-	if(!$date){
-		// Return a dump of all the applications of the upcoming days.
+	$offset = $db->escape($_GET['page']);	// Offset from page number.
 
-		$today = date("Y-m-d");
+	$previous = false;	// Variable to return in case there are previous logs.
 
-		$query = "SELECT * FROM ".$config['tableprefix']."permits WHERE pdate >= '".$today."'";
+	$next = false;		// Variable to return in case there are further logs.
 
-		JSONPrinter($query);
+	$totallogs = "";
+	$rowsperpage = 10;
+	$number = 0;
+
+	$today = date("Y-m-d");
+
+	if(!$offset){
+		$offset = 1;
 	}
-	else{
-		// If date has been passed.
 
-		// Print all the applications that have been applied for on that particular date.
+	$superquery = "SELECT * FROM ".$config['tableprefix']."permits";	// Query for calculating the number of logs in total compared to where we are right now.
 
-		$query = "SELECT * FROM ".$config['tableprefix']."permits WHERE pdate = '".$date."'";
+	$query = $superquery;
 
-		JSONPrinter($query);		
+	$query .= ($date)?" WHERE pdate = '$date'":" WHERE pdate >= '$today'";
+
+	$query .= (" LIMIT $rowsperpage OFFSET ".(($offset - 1) * $rowsperpage)." ;");
+
+	try{
+		$totallogs = $db->numrows($db->query($superquery));
 	}
+	catch(Exception $e){
+		echo "{\"status\":500, \"error\" : \"Internal Server Error.\"}";
+		exit();
+	}
+
+	if($offset * $rowsperpage > $rowsperpage){
+		$previous = true;
+	}
+
+	if($offset * $rowsperpage < $totallogs){
+		$next = true;	// More logs remaining.
+	}
+
+	$queryob = $db->query($query);
+
+	$numrows = $db->numrows($queryob);
+
+	echo "{\"status\":200,\"numlogs\":$numrows,\"applications\":[";;
+
+	while($application = $db->fetch($queryob)){
+		// Printing all fields per application.
+
+		echo '{
+			"permit_id":'.$application['permitid'].',
+			"applicant_name":"'.$application['applicant_name'].'",
+			"vehicle_no":"'.$application['vehicle_no'].'",
+			"applicant_email":"'.$application['applicant_email'].'",
+			"applicant_phone":"'.$application['applicant_phone'].'",
+			"approved":'.$application['approved'].',
+			"pdate":"'.$application['pdate'].'",
+			"appl_time":"'.$application['appl_time'].'",
+			"visited":'.$application['visited'].'
+		}';
+
+		if($number < $numrows - 1 && $numrows != 1){
+			// Add a comma in case there are more applications.
+			// And the number of applications is not one, in that case, there is no need for a comma.
+			echo ",";
+		}
+
+		$number++;
+	}
+
+	$previous = ($previous)?"true":"false";
+	$next = $next?"true":"false";
+
+	echo "],\"previous\": ".$previous.",\"next\":".$next."}";
 ?>
