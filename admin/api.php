@@ -33,9 +33,9 @@
 
 	$superquery = "SELECT * FROM ".$config['tableprefix']."permits";	// Query for calculating the number of logs in total compared to where we are right now.
 
-	$query = $superquery;
+	$superquery .= ($date)?" WHERE pdate = '$date'":" WHERE pdate >= '$today'";
 
-	$query .= ($date)?" WHERE pdate = '$date'":" WHERE pdate >= '$today'";
+	$query = $superquery;
 
 	$query .= (" LIMIT $rowsperpage OFFSET ".(($offset - 1) * $rowsperpage)." ;");
 
